@@ -38,8 +38,9 @@ int main()
         }
         bubbleSort(arr, arr.size());
         auto finish = chrono::high_resolution_clock::now();
-        cout << std::chrono::duration_cast<chrono::nanoseconds>(finish - start).count() << "ns\t\t";
-        for (int j = 0; j < (finish - start).count(); j += 100)
+        auto time = chrono::duration_cast<chrono::nanoseconds>(finish - start).count();
+        cout << time << "ns\t\t";
+        for (int j = 0; j < time; j += 100)
         {
             cout << "*";
         }
