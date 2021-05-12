@@ -31,18 +31,14 @@ int main()
     cout << "\tHistogram\t\n";
     while (true) {
         auto start = chrono::high_resolution_clock::now();
-
         arr.clear();
         for (int i = 0; i < 10; i++)
         {
             arr.push_back(rand() % 100 + 1);
         }
         bubbleSort(arr, arr.size());
-
         auto finish = chrono::high_resolution_clock::now();
-        //cout << std::chrono::duration_cast<chrono::nanoseconds>(finish - start).count() << "ns\n";
-
-        cout << (finish - start).count() << "ns\t\t";
+        cout << std::chrono::duration_cast<chrono::nanoseconds>(finish - start).count() << "ns\t\t";
         for (int j = 0; j < (finish - start).count(); j += 100)
         {
             cout << "*";
